@@ -12,5 +12,5 @@ public class GeneroDTO {
     private Long idGenero;
     private String nombreGenero;
     private String imagen;
-    //private List<Pelicula> peliculasAsociadas;
+    private List<Pelicula> peliculasAsociadas;
 }
