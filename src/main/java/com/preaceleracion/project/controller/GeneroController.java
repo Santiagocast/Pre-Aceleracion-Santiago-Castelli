@@ -2,13 +2,14 @@ package com.preaceleracion.project.controller;
 
 import com.preaceleracion.project.DTO.GeneroDTO;
 import com.preaceleracion.project.Service.GeneroService;
+import com.preaceleracion.project.Service.implementacion.GeneroServiceImpl;
+import com.preaceleracion.project.entity.Genero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("generos")
@@ -20,5 +21,10 @@ public class GeneroController {
     public ResponseEntity<GeneroDTO> save(@RequestBody GeneroDTO genero){
         GeneroDTO generoGuardado = generoService.save(genero);
         return ResponseEntity.status(HttpStatus.CREATED).body(generoGuardado);
+    }
+    @GetMapping
+    public ResponseEntity<List<GeneroDTO>> getAll(){
+        List<GeneroDTO> generos = this.generoService.getAllGeneros();
+        return ResponseEntity.ok().body(generos);
     }
 }
