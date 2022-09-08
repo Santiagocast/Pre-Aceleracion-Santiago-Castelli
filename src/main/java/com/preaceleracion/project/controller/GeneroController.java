@@ -2,8 +2,6 @@ package com.preaceleracion.project.controller;
 
 import com.preaceleracion.project.DTO.GeneroDTO;
 import com.preaceleracion.project.Service.GeneroService;
-import com.preaceleracion.project.Service.implementacion.GeneroServiceImpl;
-import com.preaceleracion.project.entity.Genero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
